@@ -9,111 +9,101 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <script type="text/javascript" >
+
+        $( document ).ready(function() {
+            $(".dropdown-button").dropdown();
+            $(".button-collapse").sideNav();
+        });
+
+    </script>
 </head>
 <body>
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">{{ config('app.name', 'Laravel') }}</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<nav>
+    <div class="nav-wrapper light-blue darken-4">
+        <a href="{{route('home')}}" class="brand-logo">CodeSoft</a>
+
+        <ul class="right hide-on-med-and-down">
+            <li>
+                <a class="dropdown-button" href="#" data-activates="dropadm">Administração
+                    <i class="material-icons right">folder</i>
+                </a>
+            </li>
+
+            <li>
+                <a class="dropdown-button" href="#" data-activates="dropcont">Contratos
+                    <i class="material-icons right">folder</i>
+                </a>
+            </li>
+
+            <li>
+                <a class="dropdown-button" href="#" data-activates="dropfinanc">Financeiro
+                    <i class="material-icons right">folder</i>
+                </a>
+            </li>
+
+            <li>
+                <a class="dropdown-button" href="#" data-activates="dropdoc">Documentos
+                    <i class="material-icons right">folder</i>
+                </a>
+            </li>
 
             @auth
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Administração
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Pessoas</a>
-                            <a class="dropdown-item" href="#">Usuários</a>
-                            <a class="dropdown-item" href="#">Produtos</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Forma pgto.</a>
-                            <a class="dropdown-item" href="#">Cond. pgto.</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Operações</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Site</a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Relacionamento
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Contratos</a>
-                            <a class="dropdown-item" href="#">Licença</a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Financeiro
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Contas a pagar</a>
-                            <a class="dropdown-item" href="#">Contas a receber</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Faturamento</a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Fiscal
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Documentos emitidos</a>
-                            <a class="dropdown-item" href="#">Documentos recebidos</a>
-                        </div>
-                    </li>
-                    @endauth
-
-                    <ul class="navbar-nav mr-auto text-end">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">Register</a>
-                            </li>
-                        @else
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a href="{{ route('logout') }}" class="dropdown-item"
-                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Sair
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-
-                </ul>
-            </div>
-        </nav>
+            <li>
+                <a class="dropdown-button" href="#" data-activates="dropuser">{{Auth::user()->name}}
+                    <i class="material-icons right">account_circle</i>
+                </a>
+            </li>
+                @endauth
+        </ul>
     </div>
-    <div>
-        @yield('content')
-    </div>
+</nav>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<ul id="dropadm" class="dropdown-content">
+    <li><a href="{{route('pessoas')}}">Pessoas</a></li>
+    <li><a href="#">Usuários</a></li>
+    <li><a href="#">Produtos</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Operações</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Forma pgto.</a></li>
+    <li><a href="#">Condição pgto.</a></li>
+</ul>
+
+<ul id="dropcont" class="dropdown-content">
+    <li><a href="#">Sites</a></li>
+    <li><a href="#">Faturamento</a></li>
+</ul>
+
+<ul id="dropfinanc" class="dropdown-content">
+    <li><a href="#">Receber</a></li>
+    <li><a href="#">Pagar</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Hoje</a></li>
+</ul>
+
+<ul id="dropuser" class="dropdown-content">
+    <li><a href="#">Perfil</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Sair</a></li>
+</ul>
+
+<ul id="dropdoc" class="dropdown-content">
+    <li><a href="#">Emitidos</a></li>
+    <li><a href="#">Recebidos</a></li>
+</ul>
+
+<div>
+    @yield('content')
+</div>
+@yield('script')
 </body>
 </html>

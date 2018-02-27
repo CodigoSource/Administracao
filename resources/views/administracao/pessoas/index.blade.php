@@ -1,53 +1,39 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="card text-center">
-        <div class="card-header">
-            <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Projetos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contato</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contratos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Financeiro</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Fiscal</a>
-                </li>
-            </ul>
-        </div>
-        <div class="card-body">
-            <div class="card-group">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Código Source</h5>
-                        <p class="card-text">Situação: Online</p>
-                        <p class="card-text">Acessos: 5</p>
-                        <p class="card-text"><small class="text-muted">Ultima atualização 3 minutos atrás.</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">MProtect</h5>
-                        <p class="card-text">Situação: Online</p>
-                        <p class="card-text">Acessos: 47</p>
-                        <p class="card-text"><small class="text-muted">Ultima atualização 2 minutos atrás.</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Contabilidade Starosky</h5>
-                        <p class="card-text">Situação: Online</p>
-                        <p class="card-text">Acessos: 30</p>
-                        <p class="card-text"><small class="text-muted">Ultima atualização 5 minutos atrás.</small></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Opções</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($pessoas as $pessoa)
+        <tr>
+            <th scope="row">{{$pessoa->id}}</th>
+            <td>{{$pessoa->nome}}</td>
+            <td>{{$pessoa->email}}</td>
+            <td>{{$pessoa->telefone}}</td>
+            <td>{{$pessoa->celular}}</td>
+            <td>
+                <a href="{{url('administracao/pessoas/consultar/'.$pessoa->id)}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <a href="{{url('administracao/pessoas/contato/'.$pessoa->id)}}"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                <a href="{{url('administracao/pessoas/contratos/'.$pessoa->id)}}"><i class="fa fa-address-card" aria-hidden="true"></i></a>
+            </td>
+            </td>
+        </tr>
+        @endforeach
+        </tbody>
+    </table>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large light-blue darken-4 waves-effect" href="{{route('nova_pessoa')}}">
+            <i class="large material-icons">add_box</i>
+        </a>
     </div>
 @endsection
