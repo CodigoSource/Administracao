@@ -27,7 +27,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PessoaController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PessoaController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PessoaController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="117">
@@ -37,11 +37,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/app.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="71" column="26" lean-forward="false" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="editar.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/administracao/pessoas/editar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="440">
-              <caret line="71" column="52" lean-forward="true" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
+              <caret line="71" column="52" lean-forward="false" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
               <folding>
                 <marker date="1520554864691" expanded="true" signature="9:22" ph="..." />
                 <marker date="1520554864691" expanded="true" signature="34:43" ph="..." />
@@ -73,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/administracao/pessoas/nova.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+              <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
               <folding>
                 <marker date="1520565339745" expanded="true" signature="9:22" ph="..." />
                 <marker date="1520565339745" expanded="true" signature="34:43" ph="..." />
@@ -268,6 +278,12 @@
               <item name="Administracao" type="b2602c69:ProjectViewProjectNode" />
               <item name="Administracao" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="factories" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Administracao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Administracao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="migrations" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -278,52 +294,12 @@
             <path>
               <item name="Administracao" type="b2602c69:ProjectViewProjectNode" />
               <item name="Administracao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Administracao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Administracao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Administracao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Administracao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="lang" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Administracao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Administracao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Administracao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Administracao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="administracao" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Administracao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Administracao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="administracao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="pessoas" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Administracao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Administracao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="layouts" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Administracao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Administracao" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Administracao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Administracao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -382,13 +358,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69947000" />
+    <option name="totallyTimeSpent" value="70086000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22767204" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22767204" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -598,7 +573,7 @@
         <state relative-caret-position="629">
           <caret line="37" column="10" lean-forward="true" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
           <folding>
-            <element signature="e#40#55#0#PHP" expanded="true" />
+            <element signature="e#40#55#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -729,8 +704,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="226" column="57" lean-forward="false" selection-start-line="226" selection-start-column="57" selection-end-line="226" selection-end-column="57" />
+        <state relative-caret-position="188">
+          <caret line="71" column="26" lean-forward="false" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -846,7 +822,7 @@
         <state relative-caret-position="323">
           <caret line="24" column="93" lean-forward="false" selection-start-line="24" selection-start-column="93" selection-end-line="24" selection-end-column="93" />
           <folding>
-            <element signature="e#40#55#0#PHP" expanded="true" />
+            <element signature="e#40#55#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -884,7 +860,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/administracao/pessoas/editar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
-          <caret line="71" column="52" lean-forward="true" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
+          <caret line="71" column="52" lean-forward="false" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
           <folding>
             <marker date="1520554864691" expanded="true" signature="9:22" ph="..." />
             <marker date="1520554864691" expanded="true" signature="34:43" ph="..." />
@@ -914,7 +890,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/administracao/pessoas/nova.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
           <folding>
             <marker date="1520565339745" expanded="true" signature="9:22" ph="..." />
             <marker date="1520565339745" expanded="true" signature="34:43" ph="..." />
