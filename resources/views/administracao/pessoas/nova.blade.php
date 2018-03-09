@@ -1,64 +1,93 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
-        <form method="POST" action="/administracao/pessoas/gravar" class="col s12">
+
+    <div class="container">
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+
+        <form method="POST" action="/administracao/pessoas/gravar">
             {{ csrf_field() }}
-            <div class="row">
-                <div class="input-field col s12 m12">
-                    <input id="nome" name="nome" type="text" class="validate">
-                    <label for="nome">Nome</label>
+
+            <div class="form-group col-md-12">
+                <label for="inputName">Nome completo</label>
+                <input type="text" class="form-control" id="inputName" placeholder="Nome completo" name="nome" value="{{ old('nome') }}">
+            </div>
+
+            <div class="row"></div>
+
+            <div class="form-group col-md-2">
+                <label for="inputDocumento">RG/IE</label>
+                <input type="text" class="form-control" id="inputDocumento" placeholder="RG/IE" name="registro" value="{{ old('registro') }}">
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="inputCpf">CPF/CNPJ</label>
+                <input type="text" class="form-control" id="inputCpf" placeholder="CPF/CNPJ" name="cpfcnpj" value="{{ old('cpfcnpj') }}">
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="inputTelefone">Telefone</label>
+                <input type="tel" class="form-control" id="inputTelefone" placeholder="Telefone" name="telefone" value="{{ old('telefone') }}">
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="inputCelular">Celular</label>
+                <input type="tel" class="form-control" id="inputCelular" placeholder="Celular" name="celular" value="{{ old('celular') }}">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="inputEmail">E-mail</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="E-mail" name="email" value="{{ old('email') }}">
+            </div>
+
+            <div class="row"></div>
+
+            <div class="form-group col-md-4">
+                <label for="inputSexo">Sexo: </label>
+                <label class="radio-inline"><input type="radio" id="inputSexo" name="sexo" value="M">Masculino</label>
+                <label class="radio-inline"><input type="radio" id="inputSexo" name="sexo" value="F">Feminino</label>
+                <label class="radio-inline"><input type="radio" id="inputSexo" name="sexo" value="O">Outro</label>
+            </div>
+
+            <div class="form-group col-md-8">
+                <label for="inputAbrangencia">Abrangência: </label>
+                <label class="radio-inline"><input type="radio" id="inputAbrangencia" name="abrangencia" value="A">Cliente</label>
+                <label class="radio-inline"><input type="radio" id="inputAbrangencia" name="abrangencia" value="B">Concorrente</label>
+                <label class="radio-inline"><input type="radio" id="inputAbrangencia" name="abrangencia" value="C">Funcionario</label>
+                <label class="radio-inline"><input type="radio" id="inputAbrangencia" name="abrangencia" value="D">Fornecedor</label>
+            </div>
+
+            <div class="row"></div>
+
+            <div class="form-group col-md-12">
+                <label for="inputObservacao">Observação</label>
+                <textarea class="form-control" id="inputObservacao" placeholder="Observação" name="observacao" rows="3"></textarea>
+            </div>
+
+            <div class="row"></div>
+
+            <div class="btn-group btn-group-justified col-md-12" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default">Cancelar</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="reset" class="btn btn-default">Limpar</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="submit" class="btn btn-default">Continuar</button>
                 </div>
             </div>
-            <div class="row">
-                <div class="input-field col s12 m6">
-                    <input id="documento" name="registro" type="text" class="validate">
-                    <label for="documento">Documento</label>
-                </div>
-                <div class="input-field col s12 m6">
-                    <input id="CPFCNPJ" type="text" name="cpfcnpj" class="validate">
-                    <label for="CPFCNPJ">CPF/CNPJ</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12 m6">
-                    <input id="telefone" name="telefone" type="tel" class="validate">
-                    <label for="telefone">Telefone</label>
-                </div>
-                <div class="input-field col s12 m6">
-                    <input id="celular" name="celular" type="tel" class="validate">
-                    <label for="celular">Celular</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12 m6">
-                    <input id="email" type="email" name="email" class="validate">
-                    <label for="email">E-mail</label>
-                </div>
-                <div class="input-field col s12 m6">
-                    <input id="emailsec" type="email" name="emailsec" class="validate">
-                    <label for="emailsec">E-mail secundário</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12 m12">
-                    <textarea id="observacao" type="text" name="observacao" class="materialize-textarea"></textarea>
-                    <label for="observacao">Obervação</label>
-                </div>
-            </div>
-            <div class="row">
-                <button class="btn waves-effect amber darken-2 col m3 s3" name="action">Voltar
-                    <i class="material-icons right">undo</i>
-                </button>
-                <div class="col s1 m1"></div>
-                <button class="btn waves-effect red col m4 s4 " type="reset" name="action">Limpar
-                    <i class="material-icons right">clear</i>
-                </button>
-                <div class="col s1 m1"></div>
-                <button class="btn waves-effect waves-light col m3 s3" type="submit" name="action">Cadastrar
-                    <i class="material-icons right">send</i>
-                </button>
-            </div>
+
         </form>
     </div>
 @endsection
@@ -73,53 +102,4 @@
             $("#inputCep").mask("99.999-999");
         });
     </script>
-
-    <script type="text/javascript" >
-
-        function limpa_formulário_cep() {
-            document.getElementById('inputRua').value=("");
-            document.getElementById('inputBairro').value=("");
-            document.getElementById('inputCidade').value=("");
-            document.getElementById('inputUF').value=("");
-        }
-
-        function meu_callback(conteudo) {
-            if (!("erro" in conteudo)) {
-                document.getElementById('inputRua').value=(conteudo.logradouro);
-                document.getElementById('inputBairro').value=(conteudo.bairro);
-                document.getElementById('inputCidade').value=(conteudo.localidade);
-                document.getElementById('inputUF').value=(conteudo.uf);
-            }
-            else {
-                limpa_formulário_cep();
-                alert("CEP não encontrado.");
-            }
-        }
-
-        function pesquisacep(valor) {
-            var cep = valor.replace(/\D/g, '');
-
-            if (cep != "") {
-                var validacep = /^[0-9]{8}$/;
-                if(validacep.test(cep)) {
-                    document.getElementById('inputRua').value="...";
-                    document.getElementById('inputBairro').value="...";
-                    document.getElementById('inputCidade').value="...";
-                    document.getElementById('inputUF').value="...";
-
-                    var script = document.createElement('script');
-                    script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
-                    document.body.appendChild(script);
-                }
-                else {
-                    limpa_formulário_cep();
-                    alert("Formato de CEP inválido.");
-                }
-            }
-            else {
-                limpa_formulário_cep();
-            }
-        };
-    </script>
-
 @endsection

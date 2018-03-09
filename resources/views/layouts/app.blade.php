@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt">
 <head>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -9,101 +9,143 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 
-    <script type="text/javascript" >
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-        $( document ).ready(function() {
-            $(".dropdown-button").dropdown();
-            $(".button-collapse").sideNav();
-        });
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-    </script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-<nav>
-    <div class="nav-wrapper light-blue darken-4">
-        <a href="{{route('home')}}" class="brand-logo">CodeSoft</a>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">{{ config('app.name', 'Laravel') }}</a>
+        </div>
 
-        <ul class="right hide-on-med-and-down">
-            <li>
-                <a class="dropdown-button" href="#" data-activates="dropadm">Administração
-                    <i class="material-icons right">folder</i>
-                </a>
-            </li>
+        @auth()
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Administração <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{route('pessoas')}}">Pessoas</a></li>
+                        <li><a href="#">Usuários</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Operações</a></li>
+                    </ul>
+                </li>
 
-            <li>
-                <a class="dropdown-button" href="#" data-activates="dropcont">Contratos
-                    <i class="material-icons right">folder</i>
-                </a>
-            </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Financeiro <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
 
-            <li>
-                <a class="dropdown-button" href="#" data-activates="dropfinanc">Financeiro
-                    <i class="material-icons right">folder</i>
-                </a>
-            </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Fiscal <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
 
-            <li>
-                <a class="dropdown-button" href="#" data-activates="dropdoc">Documentos
-                    <i class="material-icons right">folder</i>
-                </a>
-            </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Relacionamento <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
 
-            @auth
-            <li>
-                <a class="dropdown-button" href="#" data-activates="dropuser">{{Auth::user()->name}}
-                    <i class="material-icons right">account_circle</i>
-                </a>
-            </li>
-                @endauth
-        </ul>
-    </div>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Integrações <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">Register</a>
+                    </li>
+                @else
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        {{ Auth::user()->name }} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Perfil</a></li>
+                        <li><a href="#">Mensagens</a></li>
+                        <li><a href="#">Suporte</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{{ route('logout') }}" class="dropdown-item"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                Sair
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form></li>
+                    </ul>
+                </li>
+                    @endguest
+            </ul>
+            @endauth()
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
 </nav>
-
-<ul id="dropadm" class="dropdown-content">
-    <li><a href="{{route('pessoas')}}">Pessoas</a></li>
-    <li><a href="#">Usuários</a></li>
-    <li><a href="#">Produtos</a></li>
-    <li class="divider"></li>
-    <li><a href="#">Operações</a></li>
-    <li class="divider"></li>
-    <li><a href="#">Forma pgto.</a></li>
-    <li><a href="#">Condição pgto.</a></li>
-</ul>
-
-<ul id="dropcont" class="dropdown-content">
-    <li><a href="#">Sites</a></li>
-    <li><a href="#">Faturamento</a></li>
-</ul>
-
-<ul id="dropfinanc" class="dropdown-content">
-    <li><a href="#">Receber</a></li>
-    <li><a href="#">Pagar</a></li>
-    <li class="divider"></li>
-    <li><a href="#">Hoje</a></li>
-</ul>
-
-<ul id="dropuser" class="dropdown-content">
-    <li><a href="#">Perfil</a></li>
-    <li class="divider"></li>
-    <li><a href="#">Sair</a></li>
-</ul>
-
-<ul id="dropdoc" class="dropdown-content">
-    <li><a href="#">Emitidos</a></li>
-    <li><a href="#">Recebidos</a></li>
-</ul>
-
 <div>
     @yield('content')
 </div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>
+
 @yield('script')
 </body>
 </html>

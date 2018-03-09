@@ -49,12 +49,20 @@ class PessoaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'sexo' => 'required|min:1|max:1',
+            'abrangencia' => 'required|min:1|max:1',
+            'nome' => 'required',
+            'registro' => 'required',
+            'cpfcnpj' => 'required',
+            'telefone' => 'required',
+            'email' => 'required|email',
+        ]);
+
         $dados = $request->all();
         $pessoa = App\Pessoa::create($dados);
-        //$dados['pessoa'] = $pessoa->id;
-        //App\PessoaEndereco::create($dados);
 
-        return redirect()->route('pessoas');
+        return redirect()->route('novo_endereco')->with(compact('id', 'pessoa->id'));
     }
 
     /**
@@ -78,10 +86,14 @@ class PessoaController extends Controller
      */
     public function edit(Request $request)
     {
+        $validatedData = $request->validate([
+            'sexo' => 'required|min:1|max:1'
+        ]);
+
         if (!($cliente = App\Pessoa::find($request->id))) {
             throw new ModelNotFoundException("Pessoa não encontrada.");
         }
-        $pessoa = Pessoa::find($request->id);
+        $pessoa = App\Pessoa::find($request->id);
         $pessoa->fill($request->all());
         $pessoa->save();
 

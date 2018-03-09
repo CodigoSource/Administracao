@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Pessoa;
 use App\PessoaEndereco;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,13 @@ class PessoaEnderecoController extends Controller
     public function index()
     {
         //
+    }
+
+    public function novo($id)
+    {
+        $pessoa = Pessoa::find($id);
+
+        return view('administracao.pessoas.enderecos.novo')->with(compact('pessoa','pessoa'));
     }
 
     /**

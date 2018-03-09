@@ -29,6 +29,11 @@ Route::group(['prefix' => 'administracao', 'before' => 'auth'], function() {
         Route::post('gravar', 'PessoaController@store');
         Route::post('alterar', 'PessoaController@edit');
 
+        Route::group(['prefix' => 'endereco'], function() {
+            Route::get('novo/{id}', 'PessoaEnderecoController@novo')->name('novo_endereco');
+            Route::post('gravar', 'PessoaEnderecoController@store');
+        });
+
     });
 
     Route::group(['prefix' => 'usuarios'], function() {

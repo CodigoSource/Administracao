@@ -21,11 +21,9 @@ class CreatePessoasTable extends Migration
             $table->string('telefone');
             $table->string('celular');
             $table->string('email')->unique();
-            $table->string('emailsec')->unique();
+            $table->string('emailsec')->unique()->nullable();
             $table->string('sexo',1);
-            $table->string('ehcliente',1)->default('N');
-            $table->string('ehfornecedor',1)->default('N');
-            $table->string('ehfuncionario',1)->default('N');
+            $table->string('abrangencia',1)->nullable();
             $table->string('complemento')->nullable();
             $table->timestamps();
         });
