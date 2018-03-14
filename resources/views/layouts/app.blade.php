@@ -47,6 +47,9 @@
                         <li><a href="#">Usuários</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Operações</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Produtos</a></li>
+                        <li><a href="#">Movimentações</a></li>
                     </ul>
                 </li>
 

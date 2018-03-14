@@ -62,8 +62,8 @@
             <div class="row"></div>
 
             <div class="form-group col-md-12">
-                <label for="inputObservacao">Observação</label>
-                <textarea class="form-control" id="inputObservacao" placeholder="Observação" name="observacao" rows="3">{{$pessoa->observacao}}</textarea>
+                    <label for="inputObservacao">Observação</label>
+                    <textarea class="form-control" id="inputObservacao" placeholder="Observação" name="observacao" rows="3">{{$pessoa->observacao}}</textarea>
             </div>
 
             <div class="row"></div>
@@ -93,5 +93,9 @@
             $("#inputCelular").mask("(99) 99999-9999");
             $("#inputCep").mask("99.999-999");
         });
+        $('#myTabs a').click(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
     </script>
 @endsection
