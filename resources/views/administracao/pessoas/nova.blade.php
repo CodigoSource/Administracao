@@ -84,7 +84,7 @@
                     <button type="reset" class="btn btn-default">Limpar</button>
                 </div>
                 <div class="btn-group" role="group">
-                    <button type="submit" class="btn btn-default">Continuar</button>
+                    <button type="submit" class="btn btn-default">Salvar</button>
                 </div>
             </div>
 
